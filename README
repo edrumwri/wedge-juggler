@@ -1,0 +1,11 @@
+This directory should be installed under the Gazebo models directory (typically
+$HOME/.gazebo/models). 
+
+Build the controller for the juggler using CMake.
+
+Then start juggling with:
+
+  $ gazebo ../juggler.world
+
+from your directory used for building the plugin.
+
