@@ -23,7 +23,7 @@
       <uri>model://sun</uri>
     </include>
     <include>
-      <uri>model://juggler</uri>
+      <uri>model://wedge-juggler</uri>
     </include>
   </world>
 </sdf>

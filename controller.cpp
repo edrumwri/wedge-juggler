@@ -29,8 +29,8 @@ namespace gazebo
 
       // set parameter values
       toff = 0.0;
-      limit = -.070686;
-      period = 7;
+      limit = -.086394;
+      period = 8.0;
 
       // get the joint and set the position
       JointPtr joint = this->model->GetJoint("juggler-joint");

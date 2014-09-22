@@ -37,7 +37,7 @@
             </ode>
           </friction>
           <bounce>
-            <restitution_coefficient>0.80000000</restitution_coefficient>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
             <threshold>0.00000</threshold>
           </bounce>
           <contact>
@@ -99,7 +99,7 @@
             </ode>
           </friction>
           <bounce>
-            <restitution_coefficient>1.0000000</restitution_coefficient>
+            <restitution_coefficient>0.0000000</restitution_coefficient>
             <threshold>0.000000</threshold>
           </bounce>
           <contact>
@@ -133,7 +133,7 @@
             </ode>
           </friction>
           <bounce>
-            <restitution_coefficient>1.000000</restitution_coefficient>
+            <restitution_coefficient>0.000000</restitution_coefficient>
             <threshold>0.000000</threshold>
           </bounce>
           <contact>
@@ -192,7 +192,7 @@
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <plugin name="juggler-plugin" filename="ibjuggler.so" /> 
+    <plugin name="juggler-plugin" filename="libjuggler.so" /> 
 
   </model>
 </sdf>
