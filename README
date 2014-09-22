@@ -9,3 +9,45 @@ Then start juggling with:
 
 from your directory used for building the plugin.
 
+--------------------------------------------------
+
+Searching for parameters:
+
+For new physics engines- or getting existing physics working with
+the wedge juggler- it may take a parameter search to find reasonable
+parameters.
+
+Replace the text "libjuggler.so" with "libjuggler-search.so" and run the
+juggler as usual- except now you will tell Gazebo to use the alternative
+physics engine. For example:
+
+  $ gazebo -e dart ../juggler.world 
+
+will use the DART physics engine and attempt to find good parameter settings
+for the juggler. The method used is grid search, and the search will likely take
+several hours. Before running the grid search you will need to set
+two environment variables:
+
+  $ export GZ_BRUTE_PARAM_FILE=params
+  $ export GZ_BRUTE_OUTPUT_FILE=output
+
+The first line will tell the search the ranges and steps for the parameter
+search. The second line indicates where the evaluation results should go.
+The grid search will terminate Gazebo when complete. Assuming that
+your file is named 'output', you will likely want to sort it to find
+parameters that yield juggling, like so:
+
+  $ sort -g -k6 -k5 < output
+
+The tail of this output should look something like this:
+
+bounce:0.10000000000000001:ball-geom mu:0:ball-geom limit:-0.27488999999999997 period:12 20000 1.71585
+
+This means that the parameters bounce=0.1, mu=0.0, limit=-0.275, and 
+period=12.0 yielded a juggle for 20000 iterations (the maximum used in the
+search) with a mean ball height of 1.71585. If the juggle does not last 20000 
+iterations, the ball was ejected from the juggler some time before. If the
+mean height for the juggle is lower- say 1.2- then the ball became trapped
+at the bottom of the wedge (there was no or little ballistic flight phase
+after some time).
+ 
